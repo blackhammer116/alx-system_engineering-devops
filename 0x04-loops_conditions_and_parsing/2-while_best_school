@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #using while loop
 i=0
-while ((i <= 10));
+while [ $i -le 10 ];
 do
 	echo "Best School"
-	i++
+	((i++))
 done
