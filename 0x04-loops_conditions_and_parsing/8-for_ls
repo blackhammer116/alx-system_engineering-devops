@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#displaying the content of the current directory
+search_dir=$(ls)
+for entry in "$search_dir"
+do
+	echo "$entry"
+done
