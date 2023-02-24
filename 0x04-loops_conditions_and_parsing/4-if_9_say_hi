@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#looping until a certain contidion is satisfied
+i=1
+while [ $i -ne 10 ];
+do
+	echo "Best School"
+	if [ $i == 8 ]
+	then
+		echo "hi"
+	fi
+	i=$((i+1))
+done
