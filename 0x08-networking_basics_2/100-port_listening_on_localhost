@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#using netcat to listen and connect to another network
+nc -l 98
