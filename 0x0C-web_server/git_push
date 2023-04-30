@@ -4,4 +4,4 @@ if [ $# -lt 1 ];then
 	echo "commit not passed"
 	exit
 fi
-git add .;git commit -m "'$1'";git push
+git add .;git commit -m "$1";git push
