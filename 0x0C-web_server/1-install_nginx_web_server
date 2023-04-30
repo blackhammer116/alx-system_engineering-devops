@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script automates the installation and configuration
+# of nginx
+apt-get update
+apt-get -y install nginx
+chmod 777 -R /var/www/html
+echo "Hello World!" > /var/www/html/index.html
+ufw allow 'Nginx HTTP'
+service nginx start
