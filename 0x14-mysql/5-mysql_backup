@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# setting up mysql dump and compressing the file
+if [ -z "$1" ]; then
+  echo "Error: Please provide the MySQL root password as an argument."
+  exit 1
+fi
+date_stamp=$(date +'%d-%m-%Y')
+mysqldump -u root --password="$1" --all-databases > backup.sql
+tar -czvf "$date_stamp.tar.gz" backup.sql
