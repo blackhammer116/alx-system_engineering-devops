@@ -24,10 +24,11 @@ if __name__ == ('__main__'):
     info_list = []
     for todo in todos:
         info = {}
-        info.update({"user_id": employee_id, "username": employee_name, "status": todo.get("completed"),
-                          "task": todo.get("title")})
+        info.update({"user_id": employee_id,
+            "username": employee_name, "status": todo.get(
+                "completed"),"task": todo.get("title")})
         info_list.append(info)
     with open(f"{employee_id}.CSV", "w") as f:
         header = ["user_id", "username", "status", "task"]
-        writer = DictWriter(f, fieldnames = header, quoting = QUOTE_ALL)
+        writer = DictWriter(f, fieldnames=header, quoting=QUOTE_ALL)
         writer.writerows(info_list)
