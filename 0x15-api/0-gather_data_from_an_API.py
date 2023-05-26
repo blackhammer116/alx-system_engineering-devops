@@ -22,8 +22,7 @@ if __name__ == ('__main__'):
     completed = sum(1 for todo in todos if todo["completed"])
     employee_name = list1[employee_id]["name"]
     total = len(todos)
-    print("Employee {} is done with \
-            tasks({}/{}):".format(employee_name, completed, total))
+    print(f"Employee {employee_name} is done with tasks({completed}/{total}):")
     for todo in todos:
         if todo["completed"]:
             print("\t {}".format(todo["title"]))
