@@ -17,7 +17,7 @@ if __name__ == ('__main__'):
     employee_id = int(argv[1])
     response = requests.get(url.format(employee_id))
     todos = response.json()
-    response2 = requests.get(url[:-6].employee_id)
+    response2 = requests.get(url[:-6].format(employee_id))
     list1 = response2.json()
     completed = sum(1 for todo in todos if todo["completed"])
     employee_name = list1["name"]
