@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-  These are funcdamental modules for this task
+  These are fundamental modules for this task
 """
 from csv import DictWriter, QUOTE_ALL
 import requests
@@ -24,9 +24,12 @@ if __name__ == ('__main__'):
     info_list = []
     for todo in todos:
         info = {}
-        info.update({"user_id": employee_id,
-            "username": employee_name, "status": todo.get(
-                "completed"),"task": todo.get("title")})
+        info.update({
+            "user_id": employee_id,
+            "username": employee_name,
+            "status": todo.get("completed"),
+            "task": todo.get("title")
+            })
         info_list.append(info)
     with open(f"{employee_id}.csv", "w") as f:
         header = ["user_id", "username", "status", "task"]

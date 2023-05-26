@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-  These are funcdamental modules for this task
+  These are fundamental modules for this task
 """
 import json
 from csv import DictWriter, QUOTE_ALL
@@ -25,7 +25,7 @@ if __name__ == ('__main__'):
     info_list = []
     for todo in todos:
         info = {}
-        info.update({"task": todo.get("title"),"completed": todo.get(
+        info.update({"task": todo.get("title"), "completed": todo.get(
             "completed"), "username": employee_name})
         info_list.append(info)
     with open(f"{employee_id}.json", "w") as f:

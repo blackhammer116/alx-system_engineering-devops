@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-  These are funcdamental modules for this task
+  These are fundamental modules for this task
 """
 import requests
 from sys import argv
