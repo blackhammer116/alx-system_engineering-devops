@@ -28,7 +28,7 @@ if __name__ == ('__main__'):
             "username": employee_name, "status": todo.get(
                 "completed"),"task": todo.get("title")})
         info_list.append(info)
-    with open(f"{employee_id}.CSV", "w") as f:
+    with open(f"{employee_id}.csv", "w") as f:
         header = ["user_id", "username", "status", "task"]
         writer = DictWriter(f, fieldnames=header, quoting=QUOTE_ALL)
         writer.writerows(info_list)
