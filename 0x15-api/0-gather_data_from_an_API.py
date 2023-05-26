@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-import requests
-from sys import argv
 """
   These are funcdamental modules for this task
 """
+import requests
+from sys import argv
 
 
 if __name__ == ('__main__'):
