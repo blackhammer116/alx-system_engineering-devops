@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# running whoami on another user
+if [ "$1" ]; then
+	sudo -u "$1" /bin/bash -c "whoami"
+else
+	whoami
+fi
