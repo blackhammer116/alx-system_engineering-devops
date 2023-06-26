@@ -20,7 +20,9 @@
 #
 server {
 	listen 80 default_server;
-location /hbnb_static { alias /data/web_static/current/;}
+	server_name 100.25.143.38;
+
+	location /hbnb_static { alias /data/web_static/current/;}
 	error_page 404 /404.html;
 	location = /404.html {
 		root /var/www/html;
@@ -49,16 +51,17 @@ location /hbnb_static { alias /data/web_static/current/;}
 	# Add index.php to the list if you are using PHP
 	index index.html index.htm index.nginx-debian.html;
 
-	server_name _;
+	server_name 100.25.143.38;
 	add_header X-Served-By $hostname;
 	rewrite ^/redirect_me https://www.artimus.tech permanent;
 
 	location / {
+		
+		include proxy_params;
+		proxy_pass http://0.0.0.0:5003/2-hbnb;
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
 		try_files $uri $uri/ =404;
-		include proxy_params;
-		proxy_pass http://0.0.0.0:5003/;
 	}
 
     	location /airbnb-onepage/ {
@@ -78,9 +81,15 @@ location /hbnb_static { alias /data/web_static/current/;}
 	}
 
 	location /static/ {
-		alias ~/AirBnB_clone_v4/web_dynamic/static/;
-        	expires 23d;
-        	add_header Cache-Control "public";
+	#	alias ~/AirBnB_clone_v4/web_dynamic/static/;
+        #	expires 23d;
+        #	add_header Cache-Control "public";
+        	include proxy_params;
+        	proxy_pass http://0.0.0.0:5003/2-hbnb;
+	}
+	location /login {
+		include proxy_params;
+		proxy_pass http://0.0.0.0:5003/login;
 	}
 	
 	# pass PHP scripts to FastCGI server
